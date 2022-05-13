@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Table(name = "resident")
 public class ResidentDO  {
 
+    private Boolean oldEnoughForMarriage;
     @Column
     String name;
 
@@ -39,10 +40,11 @@ public class ResidentDO  {
         this.setName(resident.getName());
         this.setResidentId(resident.getResidentId());
         this.setSex(resident.getSex());
-
+        this.oldEnoughForMarriage=resident.isOldEnoughForMarriage();
     }
 
     public ResidentDO(){};
+
 //    public List<Resident> toListResident()
 //    {
 //

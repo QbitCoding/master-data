@@ -13,6 +13,15 @@ public abstract class Person {
 
     private String sex;
 
-
+    public boolean isOldEnoughForMarriage(){
+        switch (getSex()){
+            case "男":
+                return getAge()>=22;
+            case "女":
+                return getAge()>=20;
+            default:
+                throw new RuntimeException();
+        }
+    }
 
 }

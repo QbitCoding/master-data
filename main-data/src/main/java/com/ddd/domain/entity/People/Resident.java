@@ -1,6 +1,7 @@
 package com.ddd.domain.entity.People;
 
 import com.ddd.application.command.dto.CreateResidentCommand;
+import com.ddd.application.command.handle.DomainEvent1EnterPoint;
 import com.ddd.domain.entity.space.Area;
 import com.ddd.domain.service.ResidentDomainService;
 import com.ddd.infrastructure.persistence.DO.ResidentDO;
@@ -39,6 +40,7 @@ public class Resident extends Person {
     }
 
 
-
-
+    public void modify(DomainEvent1EnterPoint.ModifyCommand command) {
+        this.setAge(command.getAge());
+    }
 }
